@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thank You | Dinesh S</title>
+  <meta name="description" content="Thank you for reaching out to Dinesh S. Your message has been received." />
+
+  <meta property="og:title" content="Thank You | Dinesh S" />
+  <meta property="og:description" content="Your message has been sent successfully." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="./assets/preview.png" />
+
+  <link rel="icon" type="image/png" href="./assets/favicon.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #f6f3ea;
+      --ink: #161814;
+      --muted: #5f665d;
+      --panel: rgba(255, 253, 248, 0.82);
+      --panel-strong: rgba(255, 253, 248, 0.95);
+      --line: rgba(22, 24, 20, 0.12);
+      --acid: #c46a2d;
+      --cyan: #b88943;
+      --coral: #8d4f25;
+      --shadow: 0 22px 60px rgba(33, 37, 28, 0.11);
+      --radius: 8px;
+      --nav-height: 72px;
+    }
+
+    [data-theme="dark"] {
+      --bg: #1a1d19;
+      --ink: #f5f1e8;
+      --muted: #aeb4a8;
+      --panel: rgba(31, 36, 30, 0.84);
+      --panel-strong: rgba(31, 36, 30, 0.96);
+      --line: rgba(245, 241, 232, 0.12);
+      --shadow: 0 22px 60px rgba(0, 0, 0, 0.34);
+      --acid: #d08745;
+      --cyan: #d8b07b;
+      --coral: #9b5d2f;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: "Space Grotesk", sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      overflow-x: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -3;
+      background:
+        linear-gradient(90deg, rgba(20, 22, 21, 0.055) 1px, transparent 1px),
+        linear-gradient(rgba(20, 22, 21, 0.055) 1px, transparent 1px);
+      background-size: 56px 56px;
+      mask-image: linear-gradient(to bottom, black, transparent 82%);
+    }
+
+    [data-theme="dark"] body::before {
+      background:
+        linear-gradient(90deg, rgba(246, 248, 242, 0.07) 1px, transparent 1px),
+        linear-gradient(rgba(246, 248, 242, 0.07) 1px, transparent 1px);
+      background-size: 56px 56px;
+    }
+
+    a { color: inherit; }
+
+    .scene {
+      position: fixed;
+      inset: 0;
+      z-index: -2;
+      background:
+        linear-gradient(135deg, color-mix(in srgb, var(--acid) 10%, transparent), transparent 34%),
+        linear-gradient(315deg, color-mix(in srgb, var(--coral) 9%, transparent), transparent 38%),
+        var(--bg);
+      pointer-events: none;
+    }
+
+    .container {
+      width: min(1100px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .nav-wrap {
+      position: sticky;
+      top: 0;
+      z-index: 1100;
+      border-bottom: 1px solid var(--line);
+      background: color-mix(in srgb, var(--panel-strong) 88%, transparent);
+      backdrop-filter: blur(14px);
+    }
+
+    nav {
+      min-height: var(--nav-height);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.05rem;
+      letter-spacing: -0.03em;
+    }
+
+    .brand-mark {
+      width: 52px;
+      height: 52px;
+      display: grid;
+      place-items: center;
+      border-radius: 14px;
+      color: #10110f;
+      background: linear-gradient(135deg, var(--acid), var(--cyan));
+      box-shadow: var(--shadow);
+      font-family: "IBM Plex Mono", monospace;
+      font-weight: 700;
+    }
+
+    .theme-btn,
+    .btn {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      text-decoration: none;
+      color: inherit;
+      background: var(--panel);
+      font: inherit;
+      cursor: pointer;
+      transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+    }
+
+    .theme-btn {
+      padding: 10px 14px;
+      min-height: 46px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+    }
+
+    .theme-btn:hover,
+    .btn:hover {
+      border-color: color-mix(in srgb, var(--cyan) 58%, var(--line));
+      transform: translateY(-1px);
+    }
+
+    main {
+      flex: 1;
+      display: grid;
+      place-items: center;
+      padding: 64px 0;
+    }
+
+    .thank-card {
+      width: min(760px, 100%);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--panel);
+      box-shadow: var(--shadow);
+      padding: 34px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .thank-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-top: 6px solid var(--acid);
+      border-radius: inherit;
+      pointer-events: none;
+    }
+
+    .eyebrow {
+      margin-bottom: 14px;
+      color: var(--cyan);
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      font-family: "IBM Plex Mono", monospace;
+    }
+
+    h1, h2, p { margin-top: 0; }
+
+    h1 {
+      margin-bottom: 14px;
+      font-size: clamp(2.5rem, 7vw, 4.8rem);
+      line-height: 0.95;
+    }
+
+    p {
+      color: var(--muted);
+      line-height: 1.75;
+      margin-bottom: 0;
+    }
+
+    .lead {
+      font-size: clamp(1rem, 2vw, 1.15rem);
+      color: color-mix(in srgb, var(--ink) 84%, var(--muted));
+      margin-bottom: 18px;
+    }
+
+    .status-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 24px 0 28px;
+    }
+
+    .chip {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: color-mix(in srgb, var(--panel) 86%, transparent);
+      color: var(--muted);
+      padding: 10px 12px;
+      font-size: 0.92rem;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      margin-top: 24px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 46px;
+      padding: 12px 16px;
+      font-weight: 700;
+    }
+
+    .btn-primary {
+      border-color: #10110f;
+      background: var(--acid);
+      color: #10110f;
+      box-shadow: 8px 8px 0 #10110f;
+    }
+
+    [data-theme="dark"] .btn-primary {
+      box-shadow: 8px 8px 0 rgba(255, 255, 255, 0.18);
+    }
+
+    .btn-secondary { background: var(--panel); }
+
+    .note {
+      margin-top: 18px;
+      font-size: 0.92rem;
+      color: var(--muted);
+    }
+
+    footer {
+      padding: 24px 0 36px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      text-align: center;
+      background: color-mix(in srgb, var(--bg) 82%, transparent);
+    }
+
+    @media (max-width: 700px) {
+      .container { width: min(100% - 18px, 1100px); }
+      nav { min-height: 68px; }
+      .brand { gap: 10px; font-size: 1rem; }
+      .brand-mark { width: 46px; height: 46px; border-radius: 12px; }
+      main { padding: 36px 0; }
+      .thank-card { padding: 22px; }
+      .actions {
+        align-items: stretch;
+        flex-direction: column;
+      }
+      .btn {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body data-theme="dark">
+  <div class="scene" aria-hidden="true"></div>
+
+  <div class="nav-wrap">
+    <div class="container">
+      <nav>
+        <a href="./index.html" class="brand" aria-label="Go back to portfolio home">
+          <span class="brand-mark">DS</span>
+          <span>Dinesh</span>
+        </a>
+        <button class="theme-btn" id="themeToggle" type="button" aria-label="Toggle theme">Dark / Light</button>
+      </nav>
+    </div>
+  </div>
+
+  <main>
+    <div class="container">
+      <section class="thank-card">
+        <div class="eyebrow">Message Sent</div>
+        <h1>Thank You.</h1>
+        <p class="lead">Your message has been sent successfully. I appreciate you reaching out and I’ll get back to you as soon as possible.</p>
+
+        <div class="status-row">
+          <span class="chip">Message Received</span>
+          <span class="chip">Portfolio Contact Form</span>
+          <span class="chip">Response Usually Within 24–48 Hours</span>
+        </div>
+
+        <p>If your message is urgent, you can also contact me directly through email or LinkedIn using the buttons below.</p>
+
+        <div class="actions">
+          <a href="./index.html" class="btn btn-primary">Back to Portfolio</a>
+          <a href="./index.html#projects" class="btn btn-secondary">View Projects</a>
+          <a href="mailto:dinesshh05@gmail.com" class="btn btn-secondary">Email Me</a>
+          <a href="https://www.linkedin.com/in/dinesh-s-647a88369/" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </div>
+
+        <p class="note">Tip: Save my email if you’d like a faster follow-up — <strong>dinesshh05@gmail.com</strong></p>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Built and designed with intent. &copy; <span id="year"></span> Dinesh S</p>
+    </div>
+  </footer>
+
+  <script>
+    const body = document.body;
+    const themeToggle = document.getElementById("themeToggle");
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    body.setAttribute("data-theme", localStorage.getItem("portfolio-theme") || "dark");
+
+    themeToggle.addEventListener("click", () => {
+      const next = body.getAttribute("data-theme") === "dark" ? "light" : "dark";
+      body.setAttribute("data-theme", next);
+      localStorage.setItem("portfolio-theme", next);
+    });
+
+    // Optional auto redirect back to portfolio after 12 seconds
+    // Uncomment if you want:
+    // setTimeout(() => {
+    //   window.location.href = "./index.html";
+    // }, 12000);
+  </script>
+</body>
+</html>
